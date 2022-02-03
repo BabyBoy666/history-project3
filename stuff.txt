@@ -1,0 +1,27 @@
+scroll: https://alvarotrigo.com/blog/css-animations-scroll/
+
+sticky: https://www.w3schools.com/css/css_positioning.asp
+
+.unity {width: 80%;
+margin: 4%;}
+
+
+.imagehold {
+  text-align: center;
+  width: 100%;
+  align-items: center;
+  justify-content: center
+}
+
+.imagehold.pic {
+  text-align: center;
+  position:absolute;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 26vh;
+  margin: 2vh;
+}
+
+
+anywhere.herokuapp.com/[your-url-here].

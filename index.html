@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    
+    <title>APUSH 1821-1830</title>
+    <link href="./css/style1.css" rel="stylesheet" type="text/css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <div class="slide-right">
+      <h1>APUSH 1821-1830</h1>
+    </div>
+    <div class="space2"></div>
+    <div class="slide-right">
+      <h3 id="intro"> &emsp; In the 1810s, the US was undergoing major change and industrialization. New forms of transportation carried cotton from the South where it was grown to the North where it was refined into a finished product by the rapidly growing number of cotton mills. The cotton mills were powered by newly created engines such as the stirling engine. With the industrial revolution came many great improvements like the stethoscope, but it was also a time of great inequality where a large and ever growing portion of people were living in poetry and working low paying jobs in dangerous mills and factories as factory owners got richer. Childeren were frequently employed in dangerous jobs</h3>
+    </div>
+    <div class="space"></div>
+    <div class="reveal">
+      <h2>Stethoscope</h2>
+      <img class="pic" src="./img/pic1.jpg">
+      <ul>
+        <br/>
+        <li>The stethoscope was invented by a French physician named Rene Laënnec in 1816</li>
+        <li>Laënnec carved flutes as a hobby and he used his skills to carve a wooden stethoscope that could amplify the sound of heartbeats and the lungs</li>
+        <li>His invention, while seemingly crude compared to stethoscopes, had very big impacts on the medical industry.</li>
+        <li>The stethoscope allowed him to classify new diseases like bronchiectasis. Rene was able to identify diseases that afflicted patients with more ease.</li>
+      </ul>
+      
+    </div>
+    <div class="space"></div>
+    <div class="reveal2">
+      <h2>Textile mills</h2>
+      <img class="pic" src="./img/pic2.jpg">
+      <ul>
+        <li>The first textile mill in the US was made by Richard Awkwright in 1790.</li>
+        <li>Arkwright had emigrated to the US from England a year prior and had used his knowledge of English mills to build a US cotton mill. </li>
+        <li>Steam power had not yet reached prominence and the mill was powered by water from an adjacent river.</li>
+        <li>A water wheel spun an intricate system of belts and pulleys that powered the mill</li>
+        <li>By 1810 there were about 50 cotton textile mills.</li>
+        <li>The cotton was grown in the climate of the south and shipped to the north using inventions like the steamboat.</li>
+      </ul>
+    </div>
+    <div class="space"></div>
+    <div class="reveal3">
+      <h2>Stirling engine</h2>
+      <img class="pic" src="./img/pic3.jpg">
+      <ul>
+        <li>Robert Stirling invented and patented the Stirling engine on September 27, 1816. The engine was first used in 1818 as a pumping device to pull water from a quarry.</li>
+        <li>Some trains used stirling engines as well</li>
+        <li>The stirling engine is an external combustion engine, This means that steam is created from outside of the engine and pushes a piston creating power.</li>
+        <li>	An internal combustion engine is self contained and can change power output quickly. </li>
+      </ul>
+    </div>
+    <div class="space"></div>
+    <div class="space"></div>
+    <div id="end"></div>
+    <div class="space2"></div>
+    <div id="outro">
+        <a class="button" target="_blank" href="https://historything.ga/Sources"><span>Sources</span></a>
+        <h1>The End</h1>
+    </div>
+  <h3 class="instruct">Controls: WASD or arrows to move/jump(space can jump as well), click to launch fireball (not needed in this one). Press jump in the air to double jump.</h3>
+<div class="unity">
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+      <div id="unity-warning"> </div>
+      <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
+      </div>
+    </div>
+    <script>
+      
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      var warningBanner = document.querySelector("#unity-warning");
+
+      // Shows a temporary message banner/ribbon for a few seconds, or
+      // a permanent error message on top of the canvas if type=='error'.
+      // If type=='warning', a yellow highlight color is used.
+      // Modify or remove this function to customize the visually presented
+      // way that non-critical warnings and error messages are presented to the
+      // user.
+      function unityShowBanner(msg, type) {
+        function updateBannerVisibility() {
+          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+        }
+        var div = document.createElement('div');
+        div.innerHTML = msg;
+        warningBanner.appendChild(div);
+        if (type == 'error') div.style = 'background: red; padding: 10px;';
+        else {
+          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+          setTimeout(function() {
+            warningBanner.removeChild(div);
+            updateBannerVisibility();
+          }, 5000);
+        }
+        updateBannerVisibility();
+      }
+
+      var buildUrl = "Build v2.1";
+      var loaderUrl = buildUrl + "/history2.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/history2.data",
+        frameworkUrl: buildUrl + "/history2.framework.js",
+        codeUrl: buildUrl + "/history2.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "My project (1)",
+        productVersion: "1.0",
+        showBanner: unityShowBanner,
+      };
+
+      // By default Unity keeps WebGL canvas render target size matched with
+      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+      // Set this to false if you want to decouple this synchronization from
+      // happening inside the engine, and you would instead like to size up
+      // the canvas DOM size and WebGL render target sizes yourself.
+      // config.matchWebGLToCanvasSize = false;
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        // Avoid draining fillrate performance on mobile devices,
+        // and default/override low DPI mode on mobile browsers.
+        config.devicePixelRatio = 1;
+        unityShowBanner('WebGL builds are not supported on mobile devices.');
+      } else {
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
+      }
+      loadingBar.style.display = "block";
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          progressBarFull.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+          loadingBar.style.display = "none";
+          fullscreenButton.onclick = () => {
+            unityInstance.SetFullscreen(1);
+          };
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script>
+</div>
+    <br/>
+    <div id="outro">
+    <a class="button" href="https://historything.ga/code" target="_blank"><span>Code</span></a>
+    </div>
+    <br/>
+    <br/>
+    <script src="Script.js"></script>
+  </body>
+</html>

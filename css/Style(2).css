@@ -1,0 +1,279 @@
+html{
+  background-color: darkcyan;
+  margin:0px;
+  padding: 0px;
+  
+}
+body{
+  background-color: lightgray;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
+  outline-style: outset;
+  outline-color: gray;
+  outline-thickness: 5px;
+  overflow-x: hidden;
+  height: 100vh;
+  text-align: center;  
+}
+body script {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    width: 100%;
+}
+
+.slide-right.intro{
+  margin: 5px;
+}
+.space{
+  height: 600px;
+}
+.space2{
+  height: 200px;
+}
+.slide-right {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  overflow: hidden;
+  max-width: 500px;
+  text-align: center;
+}
+
+.slide-right h1 {
+  animation: 2s slide-right 2s forwards;
+    
+}
+
+@keyframes slide-right {
+  to {
+    transform:translateX(0);
+  }
+}
+.reveal{
+  margin: 1%;
+  width: 98%;
+  height: 30vh;
+  background-color: black;
+  color: white;
+  position: sticky;
+  top: 2%;
+  
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 2s all ease;
+}
+.reveal h2{
+  margin: 5px;
+  color: yellow;
+}
+.reveal.active{
+  margin: 1%;
+  width: 98%;
+  height: 30vh;
+  background-color: black;
+  color: white;
+  position: sticky;
+  top: 2%;
+
+  
+  transform: translateY(0);
+  opacity: 1;
+}
+.reveal.active.leave{
+  margin: 1%;
+  width: 98%;
+  height: 30vh;
+  background-color: black;
+  color: white;
+  position: sticky;
+  top: 2%;
+  
+  animation: 2s slide-out 0s forwards;
+    transform:translateX(0%);
+  overflow: hidden;
+}
+.reveal.active h2{
+    margin: 0px;
+    color: yellow;
+}
+
+.reveal2{
+  margin: 1%;
+  width: 98%;
+  height: 30vh;
+  background-color: black;
+  color: white;
+  position: sticky;
+  top: 34%;
+  
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 2s all ease;
+}
+.reveal2 h2{
+  margin: 5px;
+  color: yellow;
+}
+.reveal2.active{
+  margin: 1%;
+  width: 98%;
+  height: 30vh;
+  background-color: black;
+  color: white;
+  position: sticky;
+  top: 34%;
+  z-index: 2;
+
+  
+  transform: translateY(0);
+  opacity: 1;
+  z-index: 2;
+}
+.reveal2.active.leave{
+  margin: 1%;
+  width: 98%;
+  height: 30vh;
+  background-color: black;
+  color: white;
+  position: sticky;
+  top: 34%;
+  z-index: 2;
+  
+  animation: 4s slide-out 0s forwards;
+    transform:translateX(0%);
+  overflow: hidden;
+}
+.reveal2.active h2{
+    margin: 0px;
+    color: yellow;
+  z-index: 3;
+}
+
+.reveal3{
+  margin: 1%;
+  width: 98%;
+  height: 30vh;
+  background-color: black;
+  color: white;
+  position: sticky;
+  top: 40%;
+  
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 2s all ease;
+}
+.reveal3 h2{
+  margin: 5px;
+  color: yellow;
+}
+.reveal3.active{
+  margin: 1%;
+  width: 98%;
+  height: 30vh;
+  background-color: black;
+  color: white;
+  position: sticky;
+  top: 66%;
+  z-index: 2;
+
+  
+  transform: translateY(0);
+  opacity: 1;
+  z-index: 2;
+}
+.reveal3.active.leave{
+  margin: 1%;
+  width: 98%;
+  height: 30vh;
+  background-color: black;
+  color: white;
+  position: sticky;
+  top: 66%;
+  
+  animation: 6s slide-out 0s forwards;
+    transform:translateX(0);
+  overflow: hidden;
+  z-index: 2;
+}
+.reveal3.active h2{
+    margin: 0px;
+    color: yellow;
+    z-index: 3;
+}
+#end {
+  top: 0;
+}
+#outro{
+  text-align: center;
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  z-index: 1;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+@keyframes slide-out {
+  to {
+    transform:translateX(150%);
+  }
+}
+
+
+.unity{
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.unity#unity-container.unity-desktop { margin: 0;}
+#unity-container.unity-mobile {display: block;
+ margin-left: auto; margin-right: auto; }
+#unity-canvas { background: #231F20 }
+.unity-mobile #unity-canvas { width: 100%; height: 100% }
+#unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none }
+#unity-logo { width: 154px; height: 130px; background: url('unity-logo-dark.png') no-repeat center }
+#unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 10px; background: url('progress-bar-empty-dark.png') no-repeat center }
+#unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('progress-bar-full-dark.png') no-repeat center }
+#unity-footer { position: relative }
+.unity-mobile #unity-footer { display: none }
+#unity-webgl-logo { float:left; width: 204px; height: 38px; background: url('webgl-logo.png') no-repeat center }
+#unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
+#unity-fullscreen-button { float: right; width: 38px; height: 38px; background: url('fullscreen-button.png') no-repeat center }
+#unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
